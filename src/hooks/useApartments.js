@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getApartments } from '../api/apartments'
+import { getApartments, postApartment } from '../api/apartments'
 
 export const useApartments = () => {
   const [apartmentsList, setApartmentsList] = useState()
@@ -17,9 +17,17 @@ export const useApartments = () => {
     }
   }
 
+  const addApartment = async (apartment) => {
+    try {
+      await postApartment(apartment)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     fetchApartments()
   }, [])
 
-  return { apartmentsList, isLoading }
+  return { isLoading, apartmentsList, addApartment }
 }
