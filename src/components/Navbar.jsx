@@ -1,20 +1,16 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Navbar = () => {
   return (
     <Wrapper>
-      <ul>
-        <li>
-          <RouterLink to="/">Home</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/apartments">Apartments</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/create">Create Apartment</RouterLink>
-        </li>
-      </ul>
+      <RouterLink to="/">
+        <Button>Home</Button>
+      </RouterLink>
+
+      <RouterLink to="/apartments/new">
+        <Button>Add Apartment</Button>
+      </RouterLink>
     </Wrapper>
   )
 }
@@ -22,20 +18,22 @@ const Navbar = () => {
 export default Navbar
 
 const Wrapper = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  background-color: #3a95e5;
+  background: #cec8db;
   color: white;
-  ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    column-gap: 7%;
-    min-width: 50%;
-  }
+  padding: 10px;
+  box-shadow: 0px 1px 2px gray;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
 `
-const RouterLink = styled(Link)`
+const Button = styled.button`
+  padding: 5px 10px;
+  min-width: 50px;
+  margin: 10px;
+  font-size: 18px;
+`
+const RouterLink = styled(NavLink)`
   color: white;
   :active {
     color: red;

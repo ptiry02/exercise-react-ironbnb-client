@@ -10,5 +10,11 @@ const CreateApartment = () => {
 
 export default CreateApartment
 const Wrapper = styled.div`
+  border: 1px solid grey;
+  box-shadow: 0px 2px 3px grey;
+  width: 400px;
   text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
 `
