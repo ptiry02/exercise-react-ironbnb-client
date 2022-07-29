@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { useApartments } from '../hooks/useApartments'
 
@@ -7,9 +8,12 @@ const CreateApartment = () => {
   const [apartInfo, setApartInfo] = useState(defaultApartment)
   const { addApartment } = useApartments()
 
+  const navigate = useNavigate()
+
   const handleSubmit = () => {
     addApartment(apartInfo)
     setApartInfo(defaultApartment)
+    navigate('/')
   }
 
   return (

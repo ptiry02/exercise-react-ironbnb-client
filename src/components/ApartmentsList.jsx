@@ -1,10 +1,10 @@
 import { useApartments } from '../hooks/useApartments'
 import ReactLoading from 'react-loading'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ApartmentsList = () => {
   const { apartmentsList, isLoading } = useApartments()
-  console.log(apartmentsList)
   return (
     <>
       <h1>Apartments</h1>
@@ -13,8 +13,10 @@ const ApartmentsList = () => {
       ) : (
         apartmentsList?.map((ap) => (
           <Card key={ap._id}>
-            {ap.img && <img src={ap.img} alt={ap._id} />}
-            <h3>{ap.title}</h3>
+            <Link to={`/apartments/${ap._id}`}>
+              {ap.img && <img src={ap.img} alt={ap._id} />}
+              <h3>{ap.title}</h3>
+            </Link>
             <p>Price: {ap.pricePerDay}</p>
           </Card>
         ))

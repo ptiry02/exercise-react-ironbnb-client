@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import styled from 'styled-components'
+import ApartmentDetails from './components/ApartmentDetails'
 import ApartmentsList from './components/ApartmentsList'
 import CreateApartment from './components/CreateApartment'
 import Navbar from './components/Navbar'
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ApartmentsList />} />
         <Route path="/apartments/new" element={<CreateApartment />} />
+        <Route path="/apartments/:id" element={<ApartmentDetails />} />
       </Routes>
     </AppWrapper>
   )
