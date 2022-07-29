@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ApartmentsList = () => {
   return (
     <Wrapper>
-      <h1>Apartments</h1>{' '}
+      <h1>Apartments</h1>
     </Wrapper>
   )
 }
